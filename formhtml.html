@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Magique ✨</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="formcss.css">
+</head>
+<body>
+    <!-- Particules d'arrière-plan -->
+    <div class="particles" id="particles"></div>
+    
+    <!-- Curseur personnalisé -->
+    <div class="custom-cursor" id="customCursor"></div>
+    
+    <div class="container">
+        <div class="form-wrapper">
+            <!-- Compteur secret -->
+            <div class="secret-counter" id="secretCounter">
+                🎯 Easter Eggs: <span id="eggCount">0</span>/7
+            </div>
+
+            <h1 class="title" id="mainTitle">
+                <span class="emoji bounce" id="emoji1">✉️</span>
+                <span class="glitch" data-text="Envoie-nous un message">Envoie-nous un message</span>
+                <span class="emoji shake" id="emoji2">✨</span>
+            </h1>
+            <p class="subtitle">On adore les messages... surtout les créatifs ! 🎨</p>
+
+            <form id="contactForm" class="contact-form">
+                <div class="form-group">
+                    <label for="name">
+                        <span class="icon rotating">👤</span> Ton nom
+                    </label>
+                    <input 
+                        type="text" 
+                        id="name" 
+                        name="name" 
+                        placeholder="Ex: Jean Dupont"
+                        required
+                        class="magic-input"
+                    >
+                    <span class="error-message" id="nameError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">
+                        <span class="icon pulse">📧</span> Ton email
+                    </label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        placeholder="Ex: jean@example.com"
+                        required
+                        class="magic-input"
+                    >
+                    <span class="error-message" id="emailError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">
+                        <span class="icon wobble">💡</span> Sujet
+                    </label>
+                    <input 
+                        type="text" 
+                        id="subject" 
+                        name="subject" 
+                        placeholder="De quoi veux-tu parler ?"
+                        required
+                        class="magic-input"
+                    >
+                    <span class="error-message" id="subjectError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">
+                        <span class="icon flip">💬</span> Ton message
+                    </label>
+                    <textarea 
+                        id="message" 
+                        name="message" 
+                        rows="5" 
+                        placeholder="Écris quelque chose de magique... ✨ (Psst: essaie 'konami' ou 'magic')"
+                        required
+                        class="magic-input"
+                    ></textarea>
+                    <span class="error-message" id="messageError"></span>
+                    <span class="char-counter" id="charCounter">0 caractères</span>
+                </div>
+
+                <button type="submit" class="submit-btn" id="submitBtn">
+                    <span class="btn-text">Envoyer la magie</span>
+                    <span class="btn-icon">🚀</span>
+                </button>
+            </form>
+
+            <div class="easter-egg-hints">
+                <div class="hint">💡 Essaie le code secret: ↑↑↓↓</div>
+                <div class="hint">🎯 Clique 5 fois sur le titre rapidement</div>
+                <div class="hint">🎨 Tape "magic" dans le message</div>
+                <div class="hint">🖱️ Secoue ta souris comme un fou!</div>
+                <div class="hint">🎭 Double-clique sur les emojis</div>
+                <div class="hint">⏰ Survole le bouton pendant 3 secondes</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Popup de confirmation -->
+    <div class="popup-overlay" id="popupOverlay">
+        <div class="popup">
+            <div class="popup-icon">🎉</div>
+            <h2>Message envoyé avec succès!</h2>
+            <p class="popup-gift">🎁 Merci pour ton message magique !</p>
+            <div class="fireworks" id="fireworks"></div>
+            <button class="popup-close" id="popupClose">Fermer</button>
+        </div>
+    </div>
+
+    <!-- Message Easter Egg découvert -->
+    <div class="egg-notification" id="eggNotification"></div>
+
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="scriptform.js"></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+
+// .vscode/launch.json
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Launch Edge (site local)",
+      "type": "pwa-msedge",
+      "request": "launch",
+      "url": "http://127.0.0.1:5500", // ← mets ici le port RÉEL de ton serveur (5500, 3000, 5173, 8080…)
+      "webRoot": "${workspaceFolder}"
+    }
+  ]
+}
